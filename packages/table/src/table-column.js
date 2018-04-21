@@ -166,6 +166,7 @@ export default {
     columnKey: String,
     align: String,
     headerAlign: String,
+    summaryAlign: String,
     showTooltipWhenOverflow: Boolean,
     showOverflowTooltip: Boolean,
     fixed: [Boolean, String],
@@ -250,6 +251,7 @@ export default {
       context: this.context,
       align: this.align ? 'is-' + this.align : null,
       headerAlign: this.headerAlign ? 'is-' + this.headerAlign : (this.align ? 'is-' + this.align : null),
+      summaryAlign: this.summaryAlign ? 'is-' + this.summaryAlign : (this.align ? 'is-' + this.align : null),
       sortable: this.sortable === '' ? true : this.sortable,
       sortMethod: this.sortMethod,
       sortBy: this.sortBy,
@@ -349,12 +351,21 @@ export default {
         if (!this.headerAlign) {
           this.columnConfig.headerAlign = newVal ? 'is-' + newVal : null;
         }
+        if (!this.summaryAlign) {
+          this.columnConfig.summaryAlign = newVal ? 'is-' + newVal : null;
+        }
       }
     },
 
     headerAlign(newVal) {
       if (this.columnConfig) {
         this.columnConfig.headerAlign = 'is-' + (newVal ? newVal : this.align);
+      }
+    },
+
+    summaryAlign(newVal) {
+      if (this.columnConfig) {
+        this.columnConfig.summaryAlign = 'is-' + (newVal ? newVal : this.align);
       }
     },
 
