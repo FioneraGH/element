@@ -1,10 +1,9 @@
 {
   "table": "./packages/table/index.js",
   "table-column": "./packages/table-column/index.js",
+  "tooltip": "./packages/tooltip/index.js",
   "message-box": "./packages/message-box/index.js",
   "notification": "./packages/notification/index.js",
   "loading": "./packages/loading/index.js",
-  "row": "./packages/row/index.js",
-  "col": "./packages/col/index.js",
   "message": "./packages/message/index.js"
 }

@@ -2,11 +2,10 @@
 
 import Table from '../packages/table/index.js';
 import TableColumn from '../packages/table-column/index.js';
+import Tooltip from '../packages/tooltip/index.js';
 import MessageBox from '../packages/message-box/index.js';
 import Notification from '../packages/notification/index.js';
 import Loading from '../packages/loading/index.js';
-import Row from '../packages/row/index.js';
-import Col from '../packages/col/index.js';
 import Message from '../packages/message/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
@@ -14,8 +13,7 @@ import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 const components = [
   Table,
   TableColumn,
-  Row,
-  Col,
+  Tooltip,
   CollapseTransition
 ];
 
@@ -57,10 +55,9 @@ module.exports = {
   Loading,
   Table,
   TableColumn,
+  Tooltip,
   MessageBox,
   Notification,
-  Row,
-  Col,
   Message
 };
 
