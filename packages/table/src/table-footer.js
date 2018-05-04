@@ -55,19 +55,33 @@ export default {
           <tr>
             {
               this._l(this.columns, (column, cellIndex) => {
-                let list = (this.summaryMethod ? this.summaryMethod({ columns: this.columns, data: this.store.states.data })[cellIndex] : sums[cellIndex]).split('\n');
-                return <td
-                  colspan={ column.colSpan }
-                  rowspan={ column.rowSpan }
-                  class={ [column.id, column.summaryAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
-                  <div class={ ['cell', column.labelClassName] }>
-                    {
-                      list.map(item => {
-                        return <div>{item}</div>;
-                      })
-                    }
-                  </div>
-                </td>;
+                let showingSummary = this.summaryMethod ? this.summaryMethod({ columns: this.columns, data: this.store.states.data })[cellIndex] : sums[cellIndex];
+                if (typeof (showingSummary) === 'string') {
+                  let list = showingSummary.split('\n');
+                  return <td
+                    colspan={ column.colSpan }
+                    rowspan={ column.rowSpan }
+                    class={ [column.id, column.summaryAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
+                    <div class={ ['cell', column.labelClassName] }>
+                      {
+                        list.map(item => {
+                          return <div>{item}</div>;
+                        })
+                      }
+                    </div>
+                  </td>;
+                } else {
+                  return <td
+                    colspan={ column.colSpan }
+                    rowspan={ column.rowSpan }
+                    class={ [column.id, column.summaryAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
+                    <div class={ ['cell', column.labelClassName] }>
+                      {
+                        this.summaryMethod ? this.summaryMethod({ columns: this.columns, data: this.store.states.data })[cellIndex] : sums[cellIndex]
+                      }
+                    </div>
+                  </td>;
+                }
               })
             }
             {
