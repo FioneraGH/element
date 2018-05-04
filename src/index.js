@@ -7,6 +7,7 @@ import MessageBox from '../packages/message-box/index.js';
 import Notification from '../packages/notification/index.js';
 import Loading from '../packages/loading/index.js';
 import Message from '../packages/message/index.js';
+import ColorPicker from '../packages/color-picker/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
@@ -14,6 +15,7 @@ const components = [
   Table,
   TableColumn,
   Tooltip,
+  ColorPicker,
   CollapseTransition
 ];
 
@@ -58,7 +60,8 @@ module.exports = {
   Tooltip,
   MessageBox,
   Notification,
-  Message
+  Message,
+  ColorPicker
 };
 
 module.exports.default = module.exports;
