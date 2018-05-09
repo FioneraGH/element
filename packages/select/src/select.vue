@@ -78,7 +78,7 @@
       :auto-complete="autoComplete"
       :size="selectSize"
       :disabled="selectDisabled"
-      :readonly="!filterable || multiple"
+      :readonly="readonly"
       :validate-event="false"
       :class="{ 'is-focus': visible }"
       @focus="handleFocus"
@@ -92,6 +92,9 @@
       @paste.native="debouncedOnInputChange"
       @mouseenter.native="inputHovering = true"
       @mouseleave.native="inputHovering = false">
+      <template slot="prefix" v-if="$slots.prefix">
+        <slot name="prefix"></slot>
+      </template>
       <i slot="suffix"
        :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"
        @click="handleIconClick"
@@ -183,6 +186,13 @@
       _elFormItemSize() {
         return (this.elFormItem || {}).elFormItemSize;
       },
+
+      readonly() {
+        // trade-off for IE input readonly problem: https://github.com/ElemeFE/element/issues/10403
+        const isIE = !this.$isServer && !isNaN(Number(document.documentMode));
+        return !this.filterable || this.multiple || !isIE && !this.visible;
+      },
+
       iconClass() {
         let criteria = this.clearable &&
           !this.selectDisabled &&
