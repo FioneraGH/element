@@ -5,6 +5,7 @@
   "message-box": "./packages/message-box/index.js",
   "notification": "./packages/notification/index.js",
   "loading": "./packages/loading/index.js",
+  "scrollbar": "./packages/scrollbar/index.js",
   "message": "./packages/message/index.js",
   "color-picker": "./packages/color-picker/index.js"
 }
