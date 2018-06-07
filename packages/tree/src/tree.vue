@@ -83,6 +83,7 @@
         type: Boolean,
         default: true
       },
+      checkOnClickNode: Boolean,
       checkDescendants: {
         type: Boolean,
         default: false
@@ -162,6 +163,10 @@
         Array.prototype.forEach.call(val, (checkbox) => {
           checkbox.setAttribute('tabindex', -1);
         });
+      },
+
+      checkStrictly(newVal) {
+        this.store.checkStrictly = newVal;
       }
     },
 

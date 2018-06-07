@@ -6,6 +6,7 @@ import Tooltip from '../packages/tooltip/index.js';
 import MessageBox from '../packages/message-box/index.js';
 import Notification from '../packages/notification/index.js';
 import Loading from '../packages/loading/index.js';
+import Scrollbar from '../packages/scrollbar/index.js';
 import Message from '../packages/message/index.js';
 import ColorPicker from '../packages/color-picker/index.js';
 import locale from 'element-ui/src/locale';
@@ -15,6 +16,7 @@ const components = [
   Table,
   TableColumn,
   Tooltip,
+  Scrollbar,
   ColorPicker,
   CollapseTransition
 ];
@@ -29,8 +31,10 @@ const install = function(Vue, opts = {}) {
 
   Vue.use(Loading.directive);
 
-  const ELEMENT = {};
-  ELEMENT.size = opts.size || '';
+  Vue.prototype.$ELEMENT = {
+    size: opts.size || '',
+    zIndex: opts.zIndex || 2000
+  };
 
   Vue.prototype.$loading = Loading.service;
   Vue.prototype.$msgbox = MessageBox;
@@ -40,7 +44,6 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
 
-  Vue.prototype.$ELEMENT = ELEMENT;
 };
 
 /* istanbul ignore if */
@@ -49,7 +52,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '2.3.6',
+  version: '2.4.0',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -60,6 +63,7 @@ module.exports = {
   Tooltip,
   MessageBox,
   Notification,
+  Scrollbar,
   Message,
   ColorPicker
 };

@@ -1063,7 +1063,7 @@ Solo puede ser expandido un nodo del mismo nivel a la vez.
 
 ### Draggable
 
-You can drag and drop Tree nodes by adding a `draggable` attribute.
+Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
 
 :::demo
 ```html
@@ -1174,7 +1174,8 @@ You can drag and drop Tree nodes by adding a `draggable` attribute.
 | render-content        | Función de renderizado para los nodos    | Function(h, { node, data, store } | —                 | —           |
 | highlight-current     | Si el nodo actual está resaltado         | boolean                           | —                 | false       |
 | default-expand-all    | Expandir todos los nodos por defecto     | boolean                           | —                 | false       |
-| expand-on-click-node  | Si expandir o contraer un nodo al pincharlo, si es false solo se hará al pinchar en la flecha | —                                 | true              | -           |
+| expand-on-click-node  | Si expandir o contraer un nodo al pincharlo, si es false solo se hará al pinchar en la flecha | boolean | — | true |
+| check-on-click-node   | si marcar o desmarcar el nodo al hacer clic en el. Si es `false`, el nodo sólo se puede marcar o desmarcar haciendo clic en la casilla de verificación. | boolean | — | false |
 | auto-expand-parent    | Expandir un nodo padre si el hijo está seleccionado | boolean                           | —                 | true        |
 | default-expanded-keys | Array de claves de los nodos expandidos inicialmente | array                             | —                 | —           |
 | show-checkbox         | Si un nodo es seleccionable              | boolean                           | —                 | false       |
@@ -1209,7 +1210,7 @@ You can drag and drop Tree nodes by adding a `draggable` attribute.
 | getHalfCheckedKeys | Si el nodo puede ser seleccionado (`show-checkbox` es `true`), devuelve la mitad de la matriz de claves del nodo actualmente seleccionado. | - |
 | getCurrentKey     | devuelve la clave del nodo resaltado actualmente (null si no hay ninguno) | —                                        |
 | getCurrentNode    | devuelve el nodo resaltado (null si no hay ninguno) | —                                        |
-| setCurrentKey     | establece el nodo resaltado por la clave, solo funciona si `node-key` está asignado | (key) la clave del nodo a ser resaltado  |
+| setCurrentKey     | establece el nodo resaltado por la clave, solo funciona si `node-key` está asignado | (key) la clave del nodo a ser resaltado. If `null`, cancel the currently highlighted node  |
 | setCurrentNode    | establece el nodo resaltado, solo funciona si `node-key` está asignado | (node) nodo a ser resaltado              |
 | getNode         | devuelve el nodo por el dato o la clave | (data) los datos o clave del nodo |
 | remove          | elimina un nodo | (data) los datos del nodo o nodo a borrar |
