@@ -507,7 +507,9 @@
         }
       }
     }
-
+    tr.hover-row > td {
+      background-color: rgba(207, 207, 207, 0.25);
+    }
     tr.current-row > td {
       background-color: $--table-current-row-background;
     }
