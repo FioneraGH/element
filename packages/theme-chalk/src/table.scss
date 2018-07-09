@@ -502,7 +502,7 @@
       &, &.el-table__row--striped {
         &, &.current-row {
           > td {
-            background-color: $--table-current-row-background;
+            background-color: $--table-current-row-background !important;
           }
         }
       }
@@ -511,7 +511,7 @@
       background-color: rgba(207, 207, 207, 0.25);
     }
     tr.current-row > td {
-      background-color: $--table-current-row-background;
+      background-color: $--table-current-row-background !important;
     }
   }
 
