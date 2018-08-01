@@ -7,5 +7,7 @@
   "loading": "./packages/loading/index.js",
   "scrollbar": "./packages/scrollbar/index.js",
   "message": "./packages/message/index.js",
-  "color-picker": "./packages/color-picker/index.js"
+  "color-picker": "./packages/color-picker/index.js",
+  "input": "./packages/input/index.js",
+  "autocomplete": "./packages/autocomplete/index.js"
 }
