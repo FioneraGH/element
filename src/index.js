@@ -69,7 +69,9 @@ module.exports = {
   Notification,
   Scrollbar,
   Message,
-  ColorPicker
+  ColorPicker,
+  Input,
+  Autocomplete
 };
 
 module.exports.default = module.exports;
