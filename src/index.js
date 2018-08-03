@@ -11,6 +11,8 @@ import Message from '../packages/message/index.js';
 import ColorPicker from '../packages/color-picker/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
+import Input from '../packages/input/index.js';
+import Autocomplete from '../packages/autocomplete/index.js';
 
 const components = [
   Table,
@@ -18,7 +20,9 @@ const components = [
   Tooltip,
   Scrollbar,
   ColorPicker,
-  CollapseTransition
+  CollapseTransition,
+  Input,
+  Autocomplete
 ];
 
 const install = function(Vue, opts = {}) {
