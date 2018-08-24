@@ -60,7 +60,6 @@ export default {
             {
               this._l(this.columns, (column, cellIndex) => {
                 let showingSummary = this.summaryMethod ? this.summaryMethod({ columns: this.columns, data: this.store.states.data })[cellIndex] : sums[cellIndex];
-                console.log('============', typeof (showingSummary));
                 if (typeof (showingSummary) === 'string') {
                   let list = showingSummary.split('\n');
                   return <td
