@@ -60,6 +60,7 @@ export default {
             {
               this._l(this.columns, (column, cellIndex) => {
                 let showingSummary = this.summaryMethod ? this.summaryMethod({ columns: this.columns, data: this.store.states.data })[cellIndex] : sums[cellIndex];
+                console.log('============', typeof (showingSummary));
                 if (typeof (showingSummary) === 'string') {
                   let list = showingSummary.split('\n');
                   return <td
@@ -78,7 +79,7 @@ export default {
                   return <td
                     colspan={ column.colSpan }
                     rowspan={ column.rowSpan }
-                    class={ [column.id, column.headerAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
+                    class={ [column.id, column.summaryAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
                     <div class={ ['cell', column.labelClassName] }>
                       {
                         sums[cellIndex]

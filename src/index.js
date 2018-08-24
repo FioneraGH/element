@@ -9,10 +9,10 @@ import Loading from '../packages/loading/index.js';
 import Scrollbar from '../packages/scrollbar/index.js';
 import Message from '../packages/message/index.js';
 import ColorPicker from '../packages/color-picker/index.js';
-import locale from 'element-ui/src/locale';
-import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Input from '../packages/input/index.js';
 import Autocomplete from '../packages/autocomplete/index.js';
+import locale from 'element-ui/src/locale';
+import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
 const components = [
   Table,
@@ -20,9 +20,9 @@ const components = [
   Tooltip,
   Scrollbar,
   ColorPicker,
-  CollapseTransition,
   Input,
-  Autocomplete
+  Autocomplete,
+  CollapseTransition
 ];
 
 const install = function(Vue, opts = {}) {
