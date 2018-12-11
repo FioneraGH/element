@@ -39,6 +39,9 @@ export default {
           {
             this._l(this.columns, column => <col name={ column.id } />)
           }
+          {
+              this.hasGutter ? <col name="gutter" /> : ''
+          }
         </colgroup>
         <tbody>
           {
@@ -170,6 +173,10 @@ export default {
 
     columns() {
       return this.store.states.columns;
+    },
+
+    hasGutter() {
+        return !this.fixed && this.tableLayout.gutterWidth;
     }
   },
 
