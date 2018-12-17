@@ -49,11 +49,20 @@ export const orderBy = function(array, sortKey, reverse, sortMethod, sortBy) {
       return sortMethod(a.value, b.value);
     }
     for (let i = 0, len = a.key.length; i < len; i++) {
-      if (a.key[i] < b.key[i]) {
-        return -1;
-      }
-      if (a.key[i] > b.key[i]) {
-        return 1;
+      if (isNaN(a.key[i]) || isNaN(b.key[i])) {
+          if (a.key[i] < b.key[i]) {
+              return -1;
+          }
+          if (a.key[i] > b.key[i]) {
+              return 1;
+          }
+      } else {
+          if (Number(a.key[i]) < Number(b.key[i])) {
+              return -1;
+          }
+          if (Number(a.key[i]) > Number(b.key[i])) {
+              return 1;
+          }
       }
     }
     return 0;
