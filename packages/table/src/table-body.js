@@ -40,7 +40,7 @@ export default {
             this._l(this.columns, column => <col name={ column.id } />)
           }
           {
-              this.hasGutter ? <col name="gutter" /> : ''
+              this.hasGutter ? <col  width="0"/> : ''
           }
         </colgroup>
         <tbody>
