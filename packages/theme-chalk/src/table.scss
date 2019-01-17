@@ -85,12 +85,14 @@
   @include m(scrollable-x) {
     .el-table__body-wrapper {
       overflow-x: auto;
+      z-index: 0;
     }
   }
 
   @include m(scrollable-y) {
     .el-table__body-wrapper {
       overflow-y: auto;
+      z-index: 0;
     }
   }
 
